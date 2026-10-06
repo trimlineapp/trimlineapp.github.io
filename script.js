@@ -199,6 +199,7 @@
     win.focus({ preventScroll: true });
     timeline.setPointerCapture(event.pointerId);
     const kind = target(event);
+    window.goatcounter?.count?.({ path: `demo-timeline-${kind}`, event: true });
     const grabTime = geometry().time(event.clientX);
     if (kind === "start" || kind === "end") {
       state.selected = kind;
